@@ -1,0 +1,273 @@
+@import 'utils/parameters'; // переменные
+@import 'main/stylesheet'; // шрифты
+@import 'main/reset'; // сброс стилей для кроссбраузерности
+@import 'main/common';
+
+
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.virtual-tours {
+
+    padding: 140px 0;
+
+    &__title {
+        position: relative;
+        margin-bottom: 103px;
+        color: $c-text;
+        font-size: 80px;
+        font-weight: 400;
+        letter-spacing: 5px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: $c-line;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1440px;
+        gap: 73px 60px;
+        justify-content: space-evenly;
+    }
+}
+
+.tour {
+
+    &__img {
+        max-width: 440px;
+        max-height: 285px;
+    }
+
+    &__title {
+        font-family: 'Forum';
+        font-size: 32px;
+        font-weight: 400;
+        letter-spacing: 5px;
+        color: #000;
+        position: relative;
+        margin-top: 26px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            width: 300px;
+            background-color: $c-line;
+            transition: 0.5s ease;
+        }
+    }
+
+    &__text {
+        font-family: 'Roboto';
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 100;
+        text-align: left;
+        color: #000;
+        margin: 24px 0 10px 0;
+    }
+
+    &__desc {
+        font-family: Roboto;
+        font-weight: 100;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000;
+    }
+
+    &:hover &__title::after {
+        width: 440px;
+    }
+}
+
+@media screen and (max-width: $md) {
+
+    .container {
+        max-width: 984px;
+    }
+
+    .virtual-tours {
+
+        padding: 80px 0;
+
+        &__title {
+            margin-bottom: 93px;
+            font-size: 50px;
+
+            &::after {
+                bottom: -33px;
+            }
+        }
+
+        &__content {
+            max-width: 768px;
+            gap: 60px 108px;
+            margin: 0 auto;
+        }
+    }
+
+    .tour {
+
+        &__img {
+            max-width: 330px;
+            max-height: 215px;
+        }
+
+        &__title {
+            font-size: 28px;
+            letter-spacing: 3px;
+
+            &::after {
+                bottom: -12px;
+                height: 3px;
+                width: 150px;
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+            margin: 21px 0 11px 0;
+        }
+
+        &__desc {
+            font-size: 16px;
+            line-height: 18.75px;
+        }
+
+        &:hover &__title::after {
+            width: 330px;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: $sm) {
+    .container {
+        max-width: 728px;
+    }
+
+    .virtual-tours {
+
+        padding: 68px 0;
+
+        &__title {
+            margin-bottom: 71px;
+            font-size: 40px;
+
+            &::after {
+                bottom: -31px;
+            }
+        }
+
+        &__content {
+            max-width: 616px;
+            gap: 37px 59px;
+        }
+    }
+
+    .tour {
+
+        &__img {
+            max-width: 280px;
+            max-height: 180px;
+        }
+
+        &__title {
+            font-size: 22px;
+            letter-spacing: 3px;
+            margin-top: 26px;
+
+            &::after {
+                bottom: -11px;
+                height: 2px;
+                width: 150px;
+            }
+        }
+
+        &__text {
+            font-size: 18px;
+            margin: 23px 0 10px 0;
+        }
+
+        &__desc {
+            font-size: 16px;
+        }
+
+        &:hover &__title::after {
+            width: 280px;
+        }
+    }
+}
+
+@media screen and (max-width: $xs) {
+
+    .container {
+        max-width: 380px;
+    }
+
+    .virtual-tours {
+
+        padding: 47px 0;
+
+        &__title {
+            margin-bottom: 67px;
+            font-size: 28px;
+
+            &::after {
+                bottom: -27px;
+            }
+        }
+
+        &__content {
+            flex-wrap: wrap;
+            max-width: 280px;
+            gap: 38px 60px;
+        }
+    }
+
+    .tour {
+
+        &__img {
+            max-width: 280px;
+            max-height: 180px;
+        }
+
+        &__title {
+            font-size: 18px;
+            letter-spacing: 5px;
+            margin-top: 26px;
+
+            &::after {
+                bottom: -12px;
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+            margin: 24px 0 10px 0;
+        }
+
+        &:hover &__title::after {
+            width: 280px;
+        }
+    }
+}
